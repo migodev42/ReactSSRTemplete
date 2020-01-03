@@ -55,36 +55,50 @@ function App() {
       number = _useState[0],
       setNumber = _useState[1];
 
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      btnDisable = _useState2[0],
+      setBtnDisable = _useState2[1];
+
   var onClick = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(function () {
     console.log('click');
     setNumber(number + 1);
   }, [number]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    console.log('number has changed');
+  }, [number]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    setBtnDisable(false);
+  }, []);
+  var btn = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
+    return __jsx("button", {
+      onClick: onClick,
+      disabled: btnDisable,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }, "click");
+  }, [onClick, btnDisable]);
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 24
     },
     __self: this
   }, "Nextjs hello world", __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 26
     },
     __self: this
   }, __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 27
     },
     __self: this
-  }, "clicked:", number), __jsx("button", {
-    onClick: onClick,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
-  }, "click")));
+  }, "clicked:", number), btn));
 }
 
 /***/ }),
