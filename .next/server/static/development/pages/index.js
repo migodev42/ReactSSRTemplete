@@ -108,28 +108,39 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/leoy/LY/code/ReactSSRTemplete/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-function App() {
-  const onClick = () => {
-    console.log('click');
-  };
 
+function App() {
+  const {
+    0: number,
+    1: setNumber
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const onClick = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(() => {
+    console.log('click');
+    setNumber(number + 1);
+  }, [number]);
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 9
     },
     __self: this
   }, "Nextjs hello world", __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 11
     },
     __self: this
-  }, __jsx("button", {
+  }, __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, "clicked:", number), __jsx("button", {
     onClick: onClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 13
     },
     __self: this
   }, "click")));
